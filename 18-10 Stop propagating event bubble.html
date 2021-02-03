@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-10 Stop propagating event bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Hello Clicker</h1>
+        <ul id="myList">
+            <li id="list1" class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Quod, possimus. Ipsum!</li>
+            <li class="item">Provident, odit rem.</li>
+            <li class="item">Vitae, esse dolorem.</li>
+            <li class="item">Necessitatibus, aut ratione.</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('list1').addEventListener('click',function(event){
+            console.log("list 1 click");
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('myList').addEventListener('click',function(event){
+            console.log("myList Click");
+            event.stopPropagation();
+        })
+        document.getElementById('container').addEventListener('click',function(){
+            console.log("container Click");
+        })
+    </script>
+</body>
+</html>

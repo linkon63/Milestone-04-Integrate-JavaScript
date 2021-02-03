@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-10 How to add elements to HTML using Javascript</title>
+    <style>
+        article {
+            border: 2px solid red;
+            ;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <article id="headOne">
+            <h3>head-1</h3>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, quasi!</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+        <article>
+            <h3>head-2</h3>
+            <p> Cumque placeat ratione animi atque. Cupiditate neque nostrum rem numquam!</p>
+            <p>Consequatur porro quisquam tempora atque.</p>
+        </article>
+        <article>
+            <h3>head-3</h3>
+            Dolorum iure similique magnam blanditiis tenetur molestiae officia exercitationem excepturi.
+            <p>Neque voluptas nam ut dicta?</p>
+        </article>
+    </section>
+    <section>
+        <div class="unorder-list">
+            <ul id="Gift-list">
+                <li>gift-item -1</li>
+                <li>gift-item -2</li>
+                <li>gift-item -3</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        let article = document.getElementById('headOne');
+        let newParg = document.createElement('p');
+        newParg.innerHTML = '---------Add from JavaScript-----------';
+        article.appendChild(newParg);
+
+
+        // add one more gift-item
+        let ul = document.getElementById('Gift-list');
+        let li = document.createElement('li');
+        li.innerHTML = 'Gift from JS';
+        ul.appendChild(li);
+    </script>
+</body>
+
+</html>

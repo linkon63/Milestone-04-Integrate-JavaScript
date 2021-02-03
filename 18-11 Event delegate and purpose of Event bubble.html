@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-10 Stop propagating event bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Hello Clicker</h1>
+        <ul id="myList">
+            <li id="list1" class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Quod, possimus. Ipsum!</li>
+            <li class="item">Provident, odit rem.</li>
+            <li class="item">Vitae, esse dolorem.</li>
+            <li class="item">Necessitatibus, aut ratione.</li>
+        </ul>
+        <button id="addItem">Add new Item</button>
+    </div>
+    <script>
+
+        // let itemClass = document.getElementsByClassName('item'); //also you can do ="getElementsByTagName('li')"
+        // for (let i = 0; i < itemClass.length; i++) {
+        //     const element = itemClass[i];
+        //     element.addEventListener('click',function(event){
+        //        // console.log(event.target.parentNode); //You can use ""event.target" Also but it's some defferant from "this"
+        //        event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+        //add item method
+        document.getElementById('addItem').addEventListener('click',function(event){
+            let itemParent = document.getElementById('myList');
+            let newItem = document.createElement('li');
+            newItem.innerText="BandNew Item";
+            itemParent.appendChild(newItem);
+        })
+
+
+        // document.getElementById('list1').addEventListener('click',function(event){
+        //     console.log("list 1 click");
+        //     event.stopImmediatePropagation();
+        // })
+        document.getElementById('myList').addEventListener('click',function(event){
+            // console.log(this,event.target);
+
+            event.target.parentNode.removeChild(event.target);
+
+
+                })
+        // document.getElementById('container').addEventListener('click',function(){
+        //     console.log("container Click");
+        // })
+    </script>
+</body>
+</html>

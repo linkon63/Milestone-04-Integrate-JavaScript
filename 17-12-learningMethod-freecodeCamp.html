@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeCodeCamp</title>
+<style>
+    .box{
+        background: gray;
+        color: white;
+        height: 20px;
+        width: 200px;
+        font-size: 20px;
+        padding: 30px;
+        margin: 20px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1 onclick=""this.innerHTML = 'black'>What is favorite Color</h1>
+
+            <h1 onclick="changeColor(this)">
+                Click and make Color Red
+            </h1>
+            <article class="art>
+                <h3 class="header">Head-1</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </article>
+            <article class="art>
+                <h3 class="header">Head-2</h3>
+                <p>Voluptate voluptatum pariatur nobis omnis?</p>
+            </article>
+            <article class="art>
+                <h3 class="header">Head-3</h3>
+                <p>Earum sed praesentium neque porro!</p>
+            </article>
+        </section>
+        <section>
+            <button id="myBtn"> Click&Change BG</button>
+        </section>
+
+        <section>
+            <div class="box" onmouseover="mOver(this)" onmouseout = "mOut(this)" >Mouse Over me !</div>
+        </section>
+
+
+    </main>
+    <script>
+        document.getElementById('myBtn').onclick = changeBackgroundToGray;
+        function changeColor(obj){
+            obj.style.color = "red";
+        }
+        function changeBackgroundToGray(){
+            document.querySelector('body').style.background = "gray";
+        }
+
+        function mOver(obj){
+            obj.innerHTML = "GET OFF ME!" 
+        }
+        function mOut(obj){
+            obj.innerHTML = "Thank You ! :) "
+        }
+    </script>
+</body>
+</html>

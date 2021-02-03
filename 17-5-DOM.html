@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-5 What is DOM (Document Object Model)</title>
+    <style>
+        article{
+            border: 2px solid red;;
+            margin: 5px;
+            padding: 12px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <main>
+        <section>
+            <h1>Exploring DOM</h1>
+            <p id="head"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, quisquam?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore voluptas in, necessitatibus esse
+                doloribus rem suscipit, enim provident id ex hic excepturi ad. Obcaecati mollitia optio suscipit
+                accusantium, tempora delectus ex perferendis exercitationem vero consequatur. Quae deserunt optio
+                quibusdam quod ipsa alias enim, corrupti recusandae perferendis ut numquam corporis incidunt sunt
+                delectus, fugiat quidem perspiciatis ullam tempora accusamus asperiores. Dolores dignissimos libero
+                veniam minus laborum voluptatem ipsam, reiciendis minima dicta adipisci quisquam a non, aut tenetur odit
+                debitis expedita saepe ex itaque excepturi necessitatibus maxime autem, labore maiores! Perspiciatis
+                aspernatur sequi distinctio delectus enim eaque itaque amet consequatur magnam? Earum quaerat est
+                aperiam, nesciunt saepe libero. Veniam voluptas eos accusamus hic consequuntur. Dolor ab optio veritatis
+                ipsum molestiae earum suscipit neque iusto autem, repellendus aspernatur perspiciatis possimus non a
+                nam? Quo molestias deserunt assumenda aliquam. Numquam iste sit cum odit eveniet? Dignissimos, eaque.
+                Repudiandae assumenda pariatur voluptates velit sit libero.</p>
+            <p id="first">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est ipsam facilis voluptatum
+                sapiente. Reprehenderit expedita excepturi ex laudantium culpa veritatis!</p>
+        </section>
+    </main>
+    <script>
+          let head = document.getElementById('head');
+        head.style.backgroundColor = 'yellow';
+        head.style.fontSize = '45px';
+        head.style.color = 'red';
+    </script>
+    <script>
+        //Document Object Model
+        let user = {
+            name: "habiJabi",
+            password: 1234,
+            person: 'banker';
+        };
+        console.log(document);
+
+        let first = document.getElementById('first');
+        first.style.backgroundColor = 'yellow';
+        first.style.fontSize = '45px';
+        first.style.color = 'red';
+    </script> -->
+
+<h1>
+    Get element by Class
+</h1>
+
+<article class="special-pro">
+    <h3>article-1</h3>
+    <p class="atuhor">Author-1</p>
+    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, laboriosam tenetur quis ipsam voluptatem cupiditate ratione perferendis ipsa excepturi quisquam praesentium iure nesciunt tempore quaerat dolore dolorum accusamus consequatur ab.</p>
+</article>
+<article class="special">
+    <h3>article-2</h3>
+    <p class="atuhor">Author-2</p>
+    <p class="description">Alias iusto consequatur similique, quos ratione porro nihil officiis commodi possimus tenetur ut perspiciatis quo cum, ex deserunt voluptatem aut ipsum soluta iure eum. Adipisci qui delectus distinctio id dolorem?</p>
+</article>
+<article class="special-pro">
+    <h3>article-3</h3>
+    <p class="atuhor">Author-3</p>
+    <p class="description">Ipsam omnis, laudantium neque dolor quibusdam veniam culpa mollitia adipisci nobis natus ut maiores quia quos facere vel quis. Blanditiis modi consequuntur laboriosam ratione perspiciatis doloremque delectus, nesciunt exercitationem alias.</p>
+</article>
+    <script>
+        let classSelect = document.querySelector('.special h3');
+        let classSelectAll = document.querySelectorAll('.special-pro h3');
+        console.log(classSelect,classSelectAll);
+        let atuhor = document.getElementsByClassName('atuhor');
+        //console.log(atuhor);
+        for(let i = 0; i< atuhor.length; i++){
+            let element = atuhor[i];
+            // console.log(element);
+            element.style.backgroundColor ='red';
+            element.style.color ='white';
+            console.log(element.innerHTML);
+            element.innerHTML = 'lekhok' + i + 1;
+        }
+    </script>
+</body>
+
+</html>

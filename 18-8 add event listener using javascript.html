@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler </title>
+</head>
+
+<body>
+    <h1 onclick="alert('You cliced boss this is not good')">Click Here but don't do event handle like that</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolorum.</p>
+    <p>Nesciunt, esse dolorem! Deserunt cumque doloribus dolores facere nisi architecto?</p>
+    <p>Eaque recusandae ipsa officia fuga aperiam libero alias nulla id.</p>
+    <button onclick="btnClick()">Click here see magic</button>
+    <button onclick="dateAndTime()">Date</button>
+    <button>Click-1</button>
+    <button id="second-btn">Click-2</button>
+    <button id="bgChanger">Click-3</button>
+    <button id="allChg">Click-4</button>
+    <button id="allChg5">Click-5</button>
+    <script>
+
+        document.getElementById('allChg').addEventListener('click',function(){
+            document.body.style.color = 'tomato';
+        }) //modern Way
+
+        const btn5 = document.getElementById('allChg5');
+        btn5.addEventListener('click',clickBg);
+
+        ///btn - 2
+        const secondBtn = document.getElementById('second-btn');
+        secondBtn.onclick = function(){
+            console.log("I Come From JS file Passing Data By ID");
+        }
+        //btn -3
+        function clickBg(){
+            document.body.style.backgroundColor = 'gray';
+        }
+        const btnSelect = document.getElementById('bgChanger');
+        btnSelect.onclick = clickBg; //clickBg(); Not Use Like That
+
+
+
+        function btnClick() {
+            console.log("You Click button");
+        }
+
+        function dateAndTime() {
+            console.log(new Date());
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="btnMinus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center" id="numberProduct" value="1">
+                           <button id="btnPlus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$1219</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="btnMinus2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center" id="numberProduct-2" value="1">
+                           <button id="btnPlus2" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$59</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$ <span id="subTotal">1,278</span></h5>
+                        <h5>$0</h5>
+                        <h5>$ <span id="total">1,278</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <script>
+      //minus btn event lister : 1
+      document.getElementById("btnMinus").addEventListener('click', function () {
+         //Changing Number Of Product
+         ProductIncrDisc('numberProduct', -1);
+         //Changing Subtotal and Total by minus btn
+         addSumAmount('subTotal', -1219);
+         addSumAmount('total', -1219);
+
+      })
+
+      //plus btn event lister : 1
+      document.getElementById("btnPlus").addEventListener('click', function () {
+         //Changing Number Of Product
+         ProductIncrDisc('numberProduct', 1);
+
+         //Changing Subtotal and Total by Plus PhonePrice
+         addSumAmount('subTotal', 1219);
+         addSumAmount('total', 1219);
+      })
+
+      //minus btn event :2
+      document.getElementById('btnMinus2').addEventListener('click', function () {
+         //Changing Number Of Product
+         ProductIncrDisc('numberProduct-2', -1);
+
+         //Changing Subtotal and Total by Minus Phone Case Price
+         addSumAmount('subTotal', -59);
+         addSumAmount('total', -59);
+      })
+      //plus btn event : 2
+      document.getElementById('btnPlus2').addEventListener('click', function () {
+         //Changing Number Of Product
+         ProductIncrDisc('numberProduct-2', 1);
+
+         //Changing Subtotal and Total by Plus Phone Case Price
+         addSumAmount('subTotal', 59);
+         addSumAmount('total', 59);
+
+      })
+
+      //Function for NumberOf product increase or discrease
+      function ProductIncrDisc(id, numberOfPerClick) {
+         const numberProduct = document.getElementById(id).value;
+         const numberProductParse = parseInt(numberProduct);
+         
+            const totalProduct = numberProductParse + numberOfPerClick;
+         
+         document.getElementById(id).value = totalProduct;
+      }
+
+      //Function for Add and Sum Total Amount or Sub Amount 
+      function addSumAmount(id, amountOfProduct) {
+         const subTotal = document.getElementById(id).innerText;
+         const subTotalParse = parseFloat(subTotal.split(",").join(""));
+         const totalSubTotal = subTotalParse + amountOfProduct;
+         
+         document.getElementById(id).innerText = totalSubTotal;
+      }
+   </script>
+
+</body>
+
+</html>
